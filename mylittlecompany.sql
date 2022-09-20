@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 19 Wrz 2022, 19:50
+-- Czas generowania: 20 Wrz 2022, 20:14
 -- Wersja serwera: 10.4.24-MariaDB
 -- Wersja PHP: 8.1.6
 
@@ -37,44 +37,45 @@ CREATE TABLE `resources` (
   `Location` varchar(40) NOT NULL,
   `PalletWeight` int(40) NOT NULL,
   `PalletHeight` int(40) NOT NULL,
-  `DeliveryNumber` int(40) NOT NULL
+  `DeliveryNumber` int(40) NOT NULL,
+  `SupplierID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Zrzut danych tabeli `resources`
 --
 
-INSERT INTO `resources` (`PalletID`, `Item`, `Quantity`, `UnitOfMeasurement`, `TypeOfPallet`, `ExpiryDate`, `Location`, `PalletWeight`, `PalletHeight`, `DeliveryNumber`) VALUES
-(1, 'Cugar', 1000000, 'g', 'Big bag', '2023-06-30', 'C1', 1000, 150, 1),
-(2, 'Cugar', 1000000, 'g', 'Big Bag', '2023-06-30', 'C1', 1000, 150, 1),
-(3, 'Cugar', 1000000, 'g', 'Big Bag', '2023-06-30', 'C1', 1000, 150, 1),
-(4, 'Cugar', 1000000, 'g', 'Big Bag', '2023-06-30', 'C1', 1000, 150, 1),
-(5, 'Cugar', 1000000, 'g', 'Big Bag', '2023-06-30', 'C1', 1000, 150, 1),
-(6, 'Cugar', 1000000, 'g', 'Big Bag', '2024-04-28', 'C1', 1000, 150, 1),
-(7, 'Cugar', 1000000, 'g', 'Big Bag', '2024-04-28', 'C1', 1000, 150, 1),
-(8, 'Cugar', 1000000, 'g', 'Big Bag', '2024-04-28', 'C1', 1000, 150, 1),
-(9, 'Cugar', 1000000, 'g', 'Big Bag', '2024-04-28', 'C1', 1000, 150, 1),
-(10, 'Cugar', 1000000, 'g', 'Big Bag', '2024-04-28', 'C1', 1000, 150, 1),
-(11, 'Glucouse Syrop', 1000000, 'ml', 'Barrel', '2023-02-28', 'GS1', 1000, 140, 1),
-(12, 'Glucouse Syrop', 1000000, 'ml', 'Barrel', '2023-02-28', 'GS1', 1000, 140, 1),
-(13, 'Glucouse Syrop', 1000000, 'ml', 'Barrel', '2023-02-28', 'GS1', 1000, 140, 1),
-(14, 'Glucouse Syrop', 1000000, 'ml', 'Barrel', '2023-02-28', 'GS1', 1000, 140, 1),
-(15, 'Glucouse Syrop', 1000000, 'ml', 'Barrel', '2023-02-28', 'GS1', 1000, 140, 1),
-(16, 'Glucouse Syrop', 1000000, 'ml', 'Barrel', '2023-02-28', 'GS1', 1000, 140, 1),
-(17, 'Glucouse Syrop', 1000000, 'ml', 'Barrel', '2023-02-28', 'GS1', 1000, 140, 1),
-(18, 'Glucouse Syrop', 1000000, 'ml', 'Barrel', '2023-02-28', 'GS1', 1000, 140, 1),
-(19, 'Peanuts', 500000, 'g', 'Plastik Box 120x80', '2023-02-28', 'P1', 500, 120, 2),
-(20, 'Peanuts', 500000, 'g', 'Plastik Box 120x80', '2023-02-28', 'P1', 500, 120, 2),
-(21, 'Peanuts', 500000, 'g', 'Plastik Box 120x80', '2023-02-28', 'P1', 500, 120, 2),
-(22, 'Peanuts', 500000, 'g', 'Plastik Box 120x80', '2023-02-28', 'P1', 500, 120, 2),
-(23, 'Peanuts', 500000, 'g', 'Plastik Box 120x80', '2023-02-28', 'P1', 500, 120, 2),
-(24, 'Peanuts', 500000, 'g', 'Plastik Box 120x80', '2023-02-28', 'P1', 500, 120, 2),
-(25, 'Peanuts', 500000, 'g', 'Plastik Box 120x80', '2023-02-28', 'P1', 500, 120, 2),
-(26, 'Milk Powder', 800000, 'g', 'Big Bag', '2022-12-31', 'MP1', 800, 150, 3),
-(27, 'Milk Powder', 800000, 'g', 'Big Bag', '2022-12-31', 'MP1', 800, 150, 3),
-(28, 'Milk Powder', 800000, 'g', 'Big Bag', '2022-12-31', 'MP1', 800, 150, 3),
-(29, 'Milk Powder', 800000, 'g', 'Big Bag', '2022-12-31', 'MP1', 800, 150, 3),
-(30, 'Milk Powder', 800000, 'g', 'Big Bag', '2022-12-31', 'MP1', 800, 150, 3);
+INSERT INTO `resources` (`PalletID`, `Item`, `Quantity`, `UnitOfMeasurement`, `TypeOfPallet`, `ExpiryDate`, `Location`, `PalletWeight`, `PalletHeight`, `DeliveryNumber`, `SupplierID`) VALUES
+(1, 'Cugar', 1000000, 'g', 'Big bag', '2023-06-30', 'C1', 1000, 150, 1, 1),
+(2, 'Cugar', 1000000, 'g', 'Big Bag', '2023-06-30', 'C1', 1000, 150, 1, 1),
+(3, 'Cugar', 1000000, 'g', 'Big Bag', '2023-06-30', 'C1', 1000, 150, 1, 1),
+(4, 'Cugar', 1000000, 'g', 'Big Bag', '2023-06-30', 'C1', 1000, 150, 1, 1),
+(5, 'Cugar', 1000000, 'g', 'Big Bag', '2023-06-30', 'C1', 1000, 150, 1, 1),
+(6, 'Cugar', 1000000, 'g', 'Big Bag', '2024-04-28', 'C1', 1000, 150, 1, 1),
+(7, 'Cugar', 1000000, 'g', 'Big Bag', '2024-04-28', 'C1', 1000, 150, 1, 1),
+(8, 'Cugar', 1000000, 'g', 'Big Bag', '2024-04-28', 'C1', 1000, 150, 1, 1),
+(9, 'Cugar', 1000000, 'g', 'Big Bag', '2024-04-28', 'C1', 1000, 150, 1, 1),
+(10, 'Cugar', 1000000, 'g', 'Big Bag', '2024-04-28', 'C1', 1000, 150, 1, 1),
+(11, 'Glucouse Syrop', 1000000, 'ml', 'Barrel', '2023-02-28', 'GS1', 1000, 140, 1, 1),
+(12, 'Glucouse Syrop', 1000000, 'ml', 'Barrel', '2023-02-28', 'GS1', 1000, 140, 1, 1),
+(13, 'Glucouse Syrop', 1000000, 'ml', 'Barrel', '2023-02-28', 'GS1', 1000, 140, 1, 1),
+(14, 'Glucouse Syrop', 1000000, 'ml', 'Barrel', '2023-02-28', 'GS1', 1000, 140, 1, 1),
+(15, 'Glucouse Syrop', 1000000, 'ml', 'Barrel', '2023-02-28', 'GS1', 1000, 140, 1, 1),
+(16, 'Glucouse Syrop', 1000000, 'ml', 'Barrel', '2023-02-28', 'GS1', 1000, 140, 1, 1),
+(17, 'Glucouse Syrop', 1000000, 'ml', 'Barrel', '2023-02-28', 'GS1', 1000, 140, 1, 1),
+(18, 'Glucouse Syrop', 1000000, 'ml', 'Barrel', '2023-02-28', 'GS1', 1000, 140, 1, 1),
+(19, 'Peanuts', 500000, 'g', 'Plastik Box 120x80', '2023-02-28', 'P1', 500, 120, 2, 2),
+(20, 'Peanuts', 500000, 'g', 'Plastik Box 120x80', '2023-02-28', 'P1', 500, 120, 2, 2),
+(21, 'Peanuts', 500000, 'g', 'Plastik Box 120x80', '2023-02-28', 'P1', 500, 120, 2, 2),
+(22, 'Peanuts', 500000, 'g', 'Plastik Box 120x80', '2023-02-28', 'P1', 500, 120, 2, 2),
+(23, 'Peanuts', 500000, 'g', 'Plastik Box 120x80', '2023-02-28', 'P1', 500, 120, 2, 2),
+(24, 'Peanuts', 500000, 'g', 'Plastik Box 120x80', '2023-02-28', 'P1', 500, 120, 2, 2),
+(25, 'Peanuts', 500000, 'g', 'Plastik Box 120x80', '2023-02-28', 'P1', 500, 120, 2, 2),
+(26, 'Milk Powder', 800000, 'g', 'Big Bag', '2022-12-31', 'MP1', 800, 150, 3, 3),
+(27, 'Milk Powder', 800000, 'g', 'Big Bag', '2022-12-31', 'MP1', 800, 150, 3, 3),
+(28, 'Milk Powder', 800000, 'g', 'Big Bag', '2022-12-31', 'MP1', 800, 150, 3, 3),
+(29, 'Milk Powder', 800000, 'g', 'Big Bag', '2022-12-31', 'MP1', 800, 150, 3, 3),
+(30, 'Milk Powder', 800000, 'g', 'Big Bag', '2022-12-31', 'MP1', 800, 150, 3, 3);
 
 -- --------------------------------------------------------
 
@@ -110,7 +111,8 @@ INSERT INTO `supplierinfo` (`SupplierID`, `SupplierName`, `ContactName`, `City`,
 ALTER TABLE `resources`
   ADD PRIMARY KEY (`PalletID`),
   ADD KEY `ID Pallet` (`PalletID`),
-  ADD KEY `ID Pallet_2` (`PalletID`);
+  ADD KEY `ID Pallet_2` (`PalletID`),
+  ADD KEY `SupplierID` (`SupplierID`);
 
 --
 -- Indeksy dla tabeli `supplierinfo`
@@ -133,6 +135,16 @@ ALTER TABLE `resources`
 --
 ALTER TABLE `supplierinfo`
   MODIFY `SupplierID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- Ograniczenia dla zrzutów tabel
+--
+
+--
+-- Ograniczenia dla tabeli `resources`
+--
+ALTER TABLE `resources`
+  ADD CONSTRAINT `resources_ibfk_1` FOREIGN KEY (`SupplierID`) REFERENCES `supplierinfo` (`SupplierID`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
