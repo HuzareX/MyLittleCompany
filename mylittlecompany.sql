@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 20 Wrz 2022, 20:14
+-- Czas generowania: 24 Wrz 2022, 12:31
 -- Wersja serwera: 10.4.24-MariaDB
 -- Wersja PHP: 8.1.6
 
@@ -20,6 +20,36 @@ SET time_zone = "+00:00";
 --
 -- Baza danych: `mylittlecompany`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Struktura tabeli dla tabeli `ordersinfo`
+--
+
+CREATE TABLE `ordersinfo` (
+  `OrderID` int(40) NOT NULL,
+  `ClientName` varchar(111) NOT NULL,
+  `Quantity` int(40) NOT NULL,
+  `ValuePLN` int(111) NOT NULL,
+  `OrderDate` date NOT NULL,
+  `Completed` varchar(40) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Zrzut danych tabeli `ordersinfo`
+--
+
+INSERT INTO `ordersinfo` (`OrderID`, `ClientName`, `Quantity`, `ValuePLN`, `OrderDate`, `Completed`) VALUES
+(1, 'MarysShop', 200, 500, '2022-08-01', 'Yes'),
+(2, 'TomysShop', 300, 750, '2022-08-01', 'Yes'),
+(3, 'FranekShop', 100, 250, '2022-08-01', 'Yes'),
+(4, 'LIDL', 600, 1500, '2022-08-01', 'Yes'),
+(5, 'NETTO', 1000, 2500, '2022-08-01', 'Yes'),
+(6, 'TomysShop', 200, 500, '2022-09-01', 'No'),
+(7, 'MarysShop', 300, 750, '2022-09-01', 'No'),
+(8, 'LIDL', 800, 2000, '2022-09-01', 'No'),
+(9, 'NETTO', 500, 1250, '2022-09-01', 'No');
 
 -- --------------------------------------------------------
 
@@ -106,6 +136,12 @@ INSERT INTO `supplierinfo` (`SupplierID`, `SupplierName`, `ContactName`, `City`,
 --
 
 --
+-- Indeksy dla tabeli `ordersinfo`
+--
+ALTER TABLE `ordersinfo`
+  ADD PRIMARY KEY (`OrderID`);
+
+--
 -- Indeksy dla tabeli `resources`
 --
 ALTER TABLE `resources`
@@ -123,6 +159,12 @@ ALTER TABLE `supplierinfo`
 --
 -- AUTO_INCREMENT dla zrzuconych tabel
 --
+
+--
+-- AUTO_INCREMENT dla tabeli `ordersinfo`
+--
+ALTER TABLE `ordersinfo`
+  MODIFY `OrderID` int(40) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT dla tabeli `resources`
