@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 24 Wrz 2022, 12:31
+-- Czas generowania: 28 Wrz 2022, 22:35
 -- Wersja serwera: 10.4.24-MariaDB
 -- Wersja PHP: 8.1.6
 
@@ -20,6 +20,41 @@ SET time_zone = "+00:00";
 --
 -- Baza danych: `mylittlecompany`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Struktura tabeli dla tabeli `employessinfo`
+--
+
+CREATE TABLE `employessinfo` (
+  `employeeID` int(255) NOT NULL,
+  `Name` varchar(255) NOT NULL,
+  `Surname` varchar(255) NOT NULL,
+  `Age` int(255) NOT NULL,
+  `City` varchar(255) NOT NULL,
+  `Team` varchar(255) NOT NULL,
+  `PhoneNumber` varchar(255) NOT NULL,
+  `Position` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Zrzut danych tabeli `employessinfo`
+--
+
+INSERT INTO `employessinfo` (`employeeID`, `Name`, `Surname`, `Age`, `City`, `Team`, `PhoneNumber`, `Position`) VALUES
+(1, 'Tomasz', 'Kowalski', 26, 'Złotów', 'Manager', '111-111-112', 'Production Manager'),
+(2, 'Bartosz', 'Kowalski', 26, 'Piła', 'Red', '111-111-113', 'Line Master'),
+(3, 'Bartosz', 'Malarski', 35, 'Piła', 'Red', '111-111-114', 'Packer'),
+(4, 'Dariusz', 'Typik', 35, 'Piła', 'Red', '111-111-114', 'Packer'),
+(5, 'Maria', 'Typik', 35, 'Piła', 'Red', '111-111-115', 'Packer'),
+(6, 'Maria', 'Typik', 35, 'Piła', 'Red', '111-111-116', 'Edgebander'),
+(7, 'Daniel', 'Węgierski', 26, 'Złotów', 'Blue', '111-111-117', 'Line Master'),
+(8, 'Monika', 'Mąciwoda', 34, 'Trzcianka', 'Blue', '111-111-118', 'Packer'),
+(9, 'Franek', 'Węsierski', 32, 'Trzcianka', 'Blue', '111-111-119', 'Packer'),
+(10, 'Tobiasz', 'Malarz', 64, 'Piła', 'Blue', '111-111-120', 'Packer'),
+(11, 'Dawid', 'Kowalski', 32, 'Złotów', 'Blue', '111-111-121', 'Edgebanner'),
+(12, 'Magdalena', 'Sobieraj', 26, 'Złotów', 'Blue', '111-111-122', 'Line Master');
 
 -- --------------------------------------------------------
 
@@ -136,6 +171,12 @@ INSERT INTO `supplierinfo` (`SupplierID`, `SupplierName`, `ContactName`, `City`,
 --
 
 --
+-- Indeksy dla tabeli `employessinfo`
+--
+ALTER TABLE `employessinfo`
+  ADD PRIMARY KEY (`employeeID`);
+
+--
 -- Indeksy dla tabeli `ordersinfo`
 --
 ALTER TABLE `ordersinfo`
@@ -159,6 +200,12 @@ ALTER TABLE `supplierinfo`
 --
 -- AUTO_INCREMENT dla zrzuconych tabel
 --
+
+--
+-- AUTO_INCREMENT dla tabeli `employessinfo`
+--
+ALTER TABLE `employessinfo`
+  MODIFY `employeeID` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT dla tabeli `ordersinfo`
