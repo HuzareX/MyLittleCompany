@@ -1,2 +1,2 @@
  MyLittleCompany
-Zabawa danymi w celu nauki data sience. SQL/VBA/Excel/PowerQuery
+Fun with database in order to learn SQL/VBA/Excel/PowerQuery
