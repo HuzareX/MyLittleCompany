@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 28 Wrz 2022, 22:35
+-- Czas generowania: 03 Paź 2022, 21:14
 -- Wersja serwera: 10.4.24-MariaDB
 -- Wersja PHP: 8.1.6
 
@@ -48,7 +48,7 @@ INSERT INTO `employessinfo` (`employeeID`, `Name`, `Surname`, `Age`, `City`, `Te
 (3, 'Bartosz', 'Malarski', 35, 'Piła', 'Red', '111-111-114', 'Packer'),
 (4, 'Dariusz', 'Typik', 35, 'Piła', 'Red', '111-111-114', 'Packer'),
 (5, 'Maria', 'Typik', 35, 'Piła', 'Red', '111-111-115', 'Packer'),
-(6, 'Maria', 'Typik', 35, 'Piła', 'Red', '111-111-116', 'Edgebander'),
+(6, 'Maria', 'Wrzeszcz', 45, 'Piła', 'Red', '111-111-116', 'Edgebander'),
 (7, 'Daniel', 'Węgierski', 26, 'Złotów', 'Blue', '111-111-117', 'Line Master'),
 (8, 'Monika', 'Mąciwoda', 34, 'Trzcianka', 'Blue', '111-111-118', 'Packer'),
 (9, 'Franek', 'Węsierski', 32, 'Trzcianka', 'Blue', '111-111-119', 'Packer'),
@@ -85,6 +85,57 @@ INSERT INTO `ordersinfo` (`OrderID`, `ClientName`, `Quantity`, `ValuePLN`, `Orde
 (7, 'MarysShop', 300, 750, '2022-09-01', 'No'),
 (8, 'LIDL', 800, 2000, '2022-09-01', 'No'),
 (9, 'NETTO', 500, 1250, '2022-09-01', 'No');
+
+-- --------------------------------------------------------
+
+--
+-- Struktura tabeli dla tabeli `productivityinfo`
+--
+
+CREATE TABLE `productivityinfo` (
+  `employeeID` int(255) NOT NULL,
+  `Name` varchar(255) NOT NULL,
+  `Surname` varchar(255) NOT NULL,
+  `SpeedPerDay` int(255) NOT NULL,
+  `Date` date NOT NULL,
+  `Shift` int(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Zrzut danych tabeli `productivityinfo`
+--
+
+INSERT INTO `productivityinfo` (`employeeID`, `Name`, `Surname`, `SpeedPerDay`, `Date`, `Shift`) VALUES
+(3, 'Bartosz', 'Malarski', 123, '2022-01-01', 1),
+(3, 'Bartosz', 'Malarski', 125, '2022-01-02', 1),
+(3, 'Bartosz', 'Malarski', 128, '2022-01-03', 1),
+(3, 'Bartosz', 'Malarski', 135, '2022-01-04', 1),
+(3, 'Bartosz', 'Malarski', 140, '2022-01-05', 1),
+(4, 'Dariusz', 'Typik', 80, '2022-01-01', 1),
+(4, 'Dariusz', 'Typik', 90, '2022-01-02', 1),
+(4, 'Dariusz', 'Typik', 90, '2022-01-03', 1),
+(4, 'Dariusz', 'Typik', 85, '2022-01-04', 1),
+(4, 'Dariusz', 'Typik', 72, '2022-01-05', 1),
+(5, 'Maria', 'Typik', 135, '2022-01-01', 1),
+(5, 'Maria', 'Typik', 135, '2022-01-02', 1),
+(5, 'Maria', 'Typik', 140, '2022-01-03', 1),
+(5, 'Maria', 'Typik', 120, '2022-01-04', 1),
+(5, 'Maria', 'Typik', 140, '2022-01-05', 1),
+(8, 'Monika', 'Mąciwoda', 124, '2022-01-01', 2),
+(8, 'Monika', 'Mąciwoda', 125, '2022-01-02', 2),
+(8, 'Monika', 'Mąciwoda', 145, '2022-01-03', 2),
+(8, 'Monika', 'Mąciwoda', 145, '2022-01-04', 2),
+(8, 'Monika', 'Mąciwoda', 150, '2022-01-05', 2),
+(9, 'Franek', 'Węsierski', 150, '2022-01-01', 2),
+(9, 'Franek', 'Węsierski', 163, '2022-01-02', 2),
+(9, 'Franek', 'Węsierski', 170, '2022-01-03', 2),
+(9, 'Franek', 'Węsierski', 163, '2022-01-04', 2),
+(9, 'Franek', 'Węsierski', 178, '2022-01-05', 2),
+(10, 'Tobiasz', 'Malarz', 80, '2022-01-01', 2),
+(10, 'Tobiasz', 'Malarz', 82, '2022-01-02', 2),
+(10, 'Tobiasz', 'Malarz', 79, '2022-01-03', 2),
+(10, 'Tobiasz', 'Malarz', 59, '2022-01-04', 2),
+(10, 'Tobiasz', 'Malarz', 62, '2022-01-05', 2);
 
 -- --------------------------------------------------------
 
